@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link'
 import styles from '../styles/Home.module.css'
 
 type CardsTypeArray = CardsType[];
@@ -18,22 +19,15 @@ interface CardsProps extends CardsType {
 const Home: NextPage = () => {
   return (
     <div>
-      <Head>
-        <title>Voyager</title>
-        <meta name="description" content="Travel app" />
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
-        <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet" />
-      </Head>
-
       <div>
         <header className="w-screen ">
           <div className="2xl:max-w-[1440px] 2xl:mx-auto w-full absolute top-0 left-0 right-0 py-5 px-4 md:px-24 text-white flex justify-between items-center">
             <div className="logo">
-              <p className="text-4xl font-medium ">
-                Voyager
-                    </p>
+                <Link href="/">
+                    <p className="cursor-pointer text-4xl font-medium ">
+                        Voyager
+                            </p>
+                </Link>
             </div>
             <div className="text-md font-medium flex flex-col md:flex-row justify-between md:items-center md:space-x-12 ">
               <p className="cursor-pointer ">

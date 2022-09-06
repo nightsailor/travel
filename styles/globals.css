@@ -35,13 +35,13 @@
     }
 
     .description {
-        @apply text-sm text-gray-700 font-medium;
+        @apply text-sm text-gray-900;
     }
 }
 
 @layer components {
     .hero {
-        background-image: url('/hero.jpg');
+        background-image: url('https://www.outsideonline.com/wp-content/uploads/2020/04/13/pketron-photo-28-horizontal_h-scaled.jpg');
         background-size: cover;
         background-repeat: no-repeat;
     }

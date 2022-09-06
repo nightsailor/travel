@@ -23,25 +23,33 @@ const Home: NextPage = () => {
         <header className="w-screen ">
           <div className="2xl:max-w-[1440px] 2xl:mx-auto w-full absolute top-0 left-0 right-0 py-5 px-4 md:px-24 text-white flex justify-between items-center">
             <div className="logo">
-                <Link href="/">
-                    <p className="cursor-pointer text-4xl font-medium ">
-                        Voyager
+              <Link href="/">
+                <p className="cursor-pointer text-4xl font-medium ">
+                  Voyager
                             </p>
-                </Link>
+              </Link>
             </div>
             <div className="text-md font-medium flex flex-col md:flex-row justify-between md:items-center md:space-x-12 ">
-              <p className="cursor-pointer ">
-                Home
+              <Link href="#">
+                <p className="cursor-pointer ">
+                  Home
                     </p>
-              <p className="cursor-pointer ">
-                Popular Destinations
+              </Link>
+              <Link href="#popular-destinations">
+                <p className="cursor-pointer ">
+                  Popular Destinations
                     </p>
-              <p className="cursor-pointer ">
-                Accomodations
+              </Link>
+              <Link href="#accomodations">
+                <p className="cursor-pointer ">
+                  Accomodations
                     </p>
-              <button className="w-28 h-8 text-md border border-white rounded-3xl ">
-                Sign Up
+              </Link>
+              <Link href="#">
+                <button className="w-28 h-8 text-md border border-white rounded-3xl ">
+                  Sign Up
                     </button>
+              </Link>
             </div>
           </div>
         </header>
@@ -58,27 +66,29 @@ const Home: NextPage = () => {
                 </p>
             <div className="w-1/3 h-12 flex flex-row ">
               <input type="text" className="w-3/4 rounded-l-md h-full px-12 text-xl outline-none border-none  " placeholder="Places or experiences" />
-              <button className="bg-green-700 rounded-r-md text-xl text-white w-1/4 h-full ">Search</button>
+              <Link href="/finder">
+                <button className="bg-green-700 rounded-r-md text-xl text-white w-1/4 h-full ">Search</button>
+              </Link>
             </div>
           </div>
 
         </section>
-        <section className="">
+        <section id="popular-destinations" className="">
           <div className="2xl:max-w-[1441px] 2xl:mx-auto pl-4 md:pl-24 mt-12">
             <p className="heading ">
               Featured Destinations
             </p>
-            <p className="text-lg text-gray-700 mt-5 mb-14">
+            <p className="text-lg text-gray-900 mt-5 mb-14">
               Tired of the same super crowded spots?
                 <br />Here you&apos;ll find unique travel destinations around the world!
                 <br />Only truly amazing destinations to inspire your next trip.
             </p>
           </div>
-          <div className="px-6 space-x-12 flex items-start justify-begin overflow-x-hidden ">
+          <div className="px-6 pb-6 space-x-12 flex items-start justify-begin overflow-x-hidden">
             {cards.slice(0, 5).map((card: CardsType, ind) => <Cards {...card} key={ind} />)}
           </div>
         </section>
-        <section className="2xl:max-w-[1441px] 2xl:mx-auto pl-4 md:pl-24 mt-12">
+        <section id="accomodations" className="2xl:max-w-[1441px] 2xl:mx-auto pl-4 md:pl-24 mt-12">
           <p className="heading ">
             Accomodations
           </p>
@@ -86,22 +96,22 @@ const Home: NextPage = () => {
             {cards.slice(5).map((card, ind) => <Accomodations {...card} key={ind} />)}
           </div>
         </section>
-        <section className="2xl:max-w-[1441px] 2xl:mx-auto bg-[#f4f9ff] bg-[#e5e1ef] bg-white px-24 py-24 text-center">
+        <section id="newsletter" className="2xl:max-w-[1441px] 2xl:mx-auto bg-[#f4f9ff] bg-[#e5e1ef] bg-white px-24 lg:pl-[350px] py-24 ">
           <p className="heading ">
             New to travelling?
           </p>
-          <p className="text-lg text-gray-700 mt-5 mb-14">
+          <p className="text-lg text-gray-900 text-black mt-5 mb-14">
             Voyager can help you get started with talking that first trip to a new place.
 							<br />Sign up for our recommended destinations newsletter and receive new
 							<br />adventures each week!
 					</p>
-          <div className="w-full h-12 flex justify-center items-center space-x-5 ">
-            <input type="text" className="w-96 rounded-md h-full px-12 text-xl outline-none border-2 border-gray-400  " placeholder="Email Address" />
-            <button className="bg-green-700 rounded-md text-xl text-white w-28 h-full ">Sign up</button>
+          <div className="w-full h-12 flex justify-begin items-center space-x-5 ">
+            <input type="text" className="w-96 rounded-sm h-full px-8 text-xl outline-none border-none bg-sky-50 placeholder-gray-900  " placeholder="Email Address" />
+            <button className="bg-green-700 rounded-sm text-xl text-white w-28 h-full ">Sign up</button>
           </div>
         </section>
         <footer className="bg-[#001638]">
-          <div className="2xl:max-w-[1441px] 2xl:mx-auto px-4 md:pl-24 pt-12 pb-16">
+          <div className="2xl:max-w-[1441px] 2xl:mx-auto px-4 md:pl-24 lg:pl-[350px] pt-12 pb-16">
             <p className="heading text-white ">
               About us
           </p>
@@ -149,7 +159,7 @@ const Accomodations = (data: any) => {
       <div className="w-full h-[250px] ">
         <img src={data.img} alt="" className="w-full h-full " />
       </div>
-      <div className="w-full h-fit pt-5">
+      <div className="w-full h-fit pt-5 pr-14">
         <p className="subheading">
           {data.title}
         </p>

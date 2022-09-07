@@ -1,0 +1,60 @@
+.container {
+  @apply min-h-screen flex items-center justify-center text-[#212529] ;
+  background: #12c2e9;
+  background: -webkit-linear-gradient(to right, #f64f59, #c471ed, #12c2e9);
+  background: linear-gradient(to right, #f64f59, #c471ed, #12c2e9);
+}
+
+.inner {
+	@apply w-[330px] sm:w-[450px];
+  margin: auto;
+  background: #ffffff;
+  box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
+  padding: 40px 55px 45px 55px;
+  border-radius: 15px;
+  transition: all .3s;
+}
+
+.outer {
+  @apply w-full flex flex-col justify-center pt-[56px];
+}
+
+.title{
+  @apply text-3xl font-medium pb-5 leading-[1] text-center;
+}
+
+.formgroup {
+  @apply mb-4;
+}
+
+.formlabel{
+  @apply inline-block mb-2;
+}
+
+.formcontrol {
+  @apply bg-white h-10 py-2 px-3 w-full border border-[#ced4da] rounded outline-none;
+}
+
+.forgotpassword,
+.forgotpassword a {
+  @apply text-right pt-2.5 text-[13px] text-[#7f7d7d];
+}
+
+.forgotpassword a {
+  @apply text-[#167bff];
+}
+
+.button {
+  @apply h-12 border border-transparent bg-gray-800 w-full text-lg text-center text-white rounded;
+}
+
+.formcontrol:focus {
+  @apply border-[#167bff] border-[#0d6efd] shadow-none;
+}
+
+/* .formcontrol:focus {
+	background-color:#fff;
+	border-color:#86b7fe;
+	outline:0;
+	box-shadow:0 0 0 .25rem rgba(13,110,253,.25);
+} */

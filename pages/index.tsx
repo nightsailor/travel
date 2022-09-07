@@ -45,7 +45,7 @@ const Home: NextPage = () => {
                   Accomodations
                     </p>
               </Link>
-              <Link href="#">
+              <Link href="/register">
                 <button className="w-28 h-8 text-md border border-white rounded-3xl ">
                   Sign Up
                     </button>

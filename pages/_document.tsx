@@ -6,9 +6,9 @@ export default class MyDocument extends Document {
       <Html lang="en">
         <Head>
           <meta name="title" content="Voyager" />
-          <meta name="author" content="Mohammed Talha" />
-          <meta name="keywords" content="Travel, Voyager" />
           <meta name="description" content="Travel app" />
+          <meta name="keywords" content="Travel, Voyager" />
+          <meta name="author" content="Mohammed Talha" />
           <link rel="icon" href="/favicon.ico" />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link

@@ -1,6 +1,6 @@
-import { formatMessage } from "./formatMessage";
-import { NextApiRequest } from "next";
-import { NextApiResponse } from "next";
+import { formatMessage } from './formatMessage'
+import { NextApiRequest } from 'next'
+import { NextApiResponse } from 'next'
 
 export class CustomResponse<T = any> {
   /**
@@ -11,7 +11,7 @@ export class CustomResponse<T = any> {
    * @param {*} data Data to be returned
    */
   constructor(public status: number, public message: string, public data?: T) {
-    this.message = formatMessage(message);
+    this.message = formatMessage(message)
   }
 }
 
@@ -21,10 +21,14 @@ export class CustomResponse<T = any> {
  * @param {NextApiResponse} res HTTP response object
  * @param {*} result Controller result
  */
-export function handleResponse(req: NextApiRequest, res: NextApiResponse, result: any) {
+export function handleResponse(
+  req: NextApiRequest,
+  res: NextApiResponse,
+  result: any,
+) {
   if (result instanceof CustomResponse) {
-    res.status(result.status).json(result);
+    res.status(result.status).json(result)
   } else {
-    res.status(200).json(result);
+    res.status(200).json(result)
   }
 }

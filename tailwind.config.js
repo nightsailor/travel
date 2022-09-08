@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-const defaultConfig = require('tailwindcss/defaultConfig');
+const defaultConfig = require('tailwindcss/defaultConfig')
 
 module.exports = {
   content: [
@@ -25,15 +25,15 @@ module.exports = {
     },
     screens: {
       ...defaultConfig.theme.screens,
-      "m2xl": { max: "1536px" },
-      "m1xl": { max: "1440px" }, //
-      "mxl": { max: "1280px" },
-      "mlgm": { max: "1200px" }, //
-      "mlg": { max: "1024px" }, //
-      "mmdm": { max: "991px" }, //
-      "mmd": { max: "767px" },
-      "msm": { max: "640px" },
-      "mxs": { max: "479px" } //
+      m2xl: { max: '1536px' },
+      m1xl: { max: '1440px' }, //
+      mxl: { max: '1280px' },
+      mlgm: { max: '1200px' }, //
+      mlg: { max: '1024px' }, //
+      mmdm: { max: '991px' }, //
+      mmd: { max: '767px' },
+      msm: { max: '640px' },
+      mxs: { max: '479px' }, //
     },
     maxWidth: {
       ...defaultConfig.theme.maxWidth,
@@ -57,8 +57,5 @@ module.exports = {
       prose: '65ch',
     },
   },
-  plugins: [
-    require('@tailwindcss/typography'),
-    require('autoprefixer'),
-  ],
-};
+  plugins: [require('@tailwindcss/typography'), require('autoprefixer')],
+}

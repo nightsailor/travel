@@ -1,14 +1,28 @@
-# dependencies
-yarn add express mongoose
-
-# devDependencies
-yarn add -D nodemon @types/express @types/mongoose
+## next app
 
 - npx create-next-app --typescript my-app
 
-- npm install --save-dev prettier
+- npx create-next-app@latest --ts
 
-- Create  .prettierrc.js
+## mongoose
+
+- yarn add mongoose
+- yarn add -D @types/mongoose
+
+## tailwind
+
+- npm install -D tailwindcss postcss autoprefixer
+- npx tailwindcss init -p
+- npm install -D @tailwindcss/typography
+
+## styled-components
+
+- npm install --save styled-components
+
+## prettier
+
+- npm install --save-dev prettier
+- create .prettierrc.js
 
 ```javascript
 module.exports = {
@@ -16,5 +30,15 @@ module.exports = {
   singleQuote: true,
   trailingComma: 'all',
   tabWidth: 2,
+}
+```
+
+- add scripts
+
+```json
+"scripts": {
+    "format": "prettier --check --ignore-path .gitignore .",
+    "format:fix": "prettier --write --ignore-path .gitignore .",
+    "fileFormat": "prettier --write"
 }
 ```

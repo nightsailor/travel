@@ -1,31 +1,30 @@
-
-import { CustomError } from "../../utils/customError";
-import {connect} from "../../database";
-import Todo, { ITodo } from "./todo.model";
-import { config } from "../../config";
+import { CustomError } from '../../utils/customError'
+import { connect } from '../../database'
+import Todo, { ITodo } from './todo.model'
+import { config } from '../../config'
 
 class TodoService {
-    async createTodo(data: { item: any; completed?: any }) {
-        if (!data.item) throw new CustomError("item is required");
-        if (!data.completed) throw new CustomError("completed is required");
-    
-        await connect();
-        // Check if todo exist
-        let todo = await Todo.findOne({ item: data.item });
-        if (todo) throw new CustomError("Item already exists");
+  async createTodo(data: { item: any; completed?: any }) {
+    if (!data.item) throw new CustomError('item is required')
+    if (!data.completed) throw new CustomError('completed is required')
 
-        // check if todo is completed
-        if (!data.completed) throw new CustomError("item is not completed");
+    await connect()
+    // Check if todo exist
+    let todo = await Todo.findOne({ item: data.item })
+    if (todo) throw new CustomError('Item already exists')
 
-        todo = new Todo(data);
+    // check if todo is completed
+    if (!data.completed) throw new CustomError('item is not completed')
 
-        await todo.save();
+    todo = new Todo(data)
 
-        return {
-          item: data.item,
-          completed: data.completed,
-        };
-      }
+    await todo.save()
+
+    return {
+      item: data.item,
+      completed: data.completed,
+    }
+  }
 }
 
-export default new TodoService();
+export default new TodoService()

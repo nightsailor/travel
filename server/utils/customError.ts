@@ -1,5 +1,5 @@
-import { NextApiRequest } from "next";
-import { NextApiResponse } from "next";
+import { NextApiRequest } from 'next'
+import { NextApiResponse } from 'next'
 
 export class CustomError extends Error {
   /**
@@ -9,7 +9,7 @@ export class CustomError extends Error {
    * @param {number} status HTTP status code. Default is 400
    */
   constructor(public message: string, public status: number = 400) {
-    super(message);
+    super(message)
   }
 }
 
@@ -19,26 +19,30 @@ export class CustomError extends Error {
  * @param {NextApiResponse} res HTTP response object
  * @param {Error} error Error object
  */
-export function handleError(req: NextApiRequest, res: NextApiResponse, error: Error) {
-  console.error(error);
+export function handleError(
+  req: NextApiRequest,
+  res: NextApiResponse,
+  error: Error,
+) {
+  console.error(error)
   if (error instanceof CustomError) {
-    res.status(error.status).send({ message: error.message });
-    return;
+    res.status(error.status).send({ message: error.message })
+    return
   }
 
   if (invalidRequestErrorNames.includes(error.constructor.name)) {
-    res.status(400).send({ message: error.message });
-    return;
+    res.status(400).send({ message: error.message })
+    return
   }
 
-  res.status(500).send({ message: error.message });
-  return;
+  res.status(500).send({ message: error.message })
+  return
 }
 
 const invalidRequestErrorNames = [
-  "CastError",
-  "ValidationError",
-  "SyntaxError",
-  "MongooseError",
-  "MongoError"
-];
+  'CastError',
+  'ValidationError',
+  'SyntaxError',
+  'MongooseError',
+  'MongoError',
+]

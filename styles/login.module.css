@@ -1,25 +1,25 @@
 .container {
-  @apply min-h-screen flex items-center justify-center text-[#212529] ;
+  @apply min-h-screen flex items-center justify-center text-[#212529];
   background: #12c2e9;
   background: -webkit-linear-gradient(to right, #f64f59, #c471ed, #12c2e9);
   background: linear-gradient(to right, #f64f59, #c471ed, #12c2e9);
 }
 
 .inner {
-	@apply w-[330px] sm:w-[450px];
+  @apply w-[330px] sm:w-[450px];
   margin: auto;
   background: #ffffff;
   box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
   padding: 40px 55px 45px 55px;
   border-radius: 15px;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 .outer {
   @apply w-full flex flex-col justify-center pt-[56px];
 }
 
-.title{
+.title {
   @apply text-3xl font-medium pb-5 leading-[1] text-center;
 }
 
@@ -27,7 +27,7 @@
   @apply mb-4;
 }
 
-.formlabel{
+.formlabel {
   @apply inline-block mb-2;
 }
 

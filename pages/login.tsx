@@ -1,12 +1,12 @@
-import { useRef, useState } from "react"
-import Link from "next/link"
+import { useRef, useState } from 'react'
+import Link from 'next/link'
 import { useRouter } from 'next/router'
-import styles from "../styles/login.module.css"
+import styles from '../styles/login.module.css'
 
 export default function Login() {
   const usernameRef = useRef<HTMLInputElement | null>(null)
   const passwordRef = useRef<HTMLInputElement | null>(null)
-  const [error, setError] = useState("")
+  const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
   const router = useRouter()
 
@@ -14,12 +14,12 @@ export default function Login() {
     e.preventDefault()
 
     try {
-      setError("")
+      setError('')
       setLoading(true)
       //   await login(usernameRef.current.value, passwordRef.current.value)
-      router.push("/")
+      router.push('/')
     } catch {
-      setError("Failed to log in")
+      setError('Failed to log in')
     }
 
     setLoading(false)
@@ -35,26 +35,45 @@ export default function Login() {
 
             <div className={styles.formgroup}>
               <label className={styles.formlabel}>Email</label>
-              <input type="email" className={styles.formcontrol} placeholder="Enter email" />
+              <input
+                type="email"
+                className={styles.formcontrol}
+                placeholder="Enter email"
+              />
             </div>
 
             <div className={styles.formgroup}>
               <label className={styles.formlabel}>Password</label>
-              <input type="password" className={styles.formcontrol} placeholder="Enter password" />
+              <input
+                type="password"
+                className={styles.formcontrol}
+                placeholder="Enter password"
+              />
             </div>
 
             <div className={styles.formgroup}>
-                <input className="mr-2 border border-[#ced4da]" type="checkbox" id="customCheck1" />
-                <label className="inline-block" htmlFor="customCheck1">Remember me</label>
+              <input
+                className="mr-2 border border-[#ced4da]"
+                type="checkbox"
+                id="customCheck1"
+              />
+              <label className="inline-block" htmlFor="customCheck1">
+                Remember me
+              </label>
             </div>
 
-            <button type="submit" className={styles.button}>Sign in</button>
+            <button type="submit" className={styles.button}>
+              Sign in
+            </button>
             <p className={styles.forgotpassword}>
               Forgot <a href="#">password?</a>
             </p>
           </form>
           <div className="w-full text-center mt-4">
-            Need an account? <Link href="/register"><a className="text-[#167bff]">Sign Up</a></Link>
+            Need an account?{' '}
+            <Link href="/register">
+              <a className="text-[#167bff]">Sign Up</a>
+            </Link>
           </div>
         </div>
       </div>
@@ -62,7 +81,7 @@ export default function Login() {
   )
 }
 
-export function Header({ }) {
+export function Header({}) {
   return (
     <header className="py-2 shadow-[0px_14px_80px_rgba(34,35,58,0.2)] h-[56px] bg-white w-full absolute top-0 flex item-center justify-start ">
       <Link href="/">
@@ -70,8 +89,12 @@ export function Header({ }) {
       </Link>
 
       <div className="flex items-center justify-start ">
-        <Link href="/login"><a className="text-lg mr-2 sm:mr-4 ">Login</a></Link>
-        <Link href="/register"><a className="text-lg ">Register</a></Link>
+        <Link href="/login">
+          <a className="text-lg mr-2 sm:mr-4 ">Login</a>
+        </Link>
+        <Link href="/register">
+          <a className="text-lg ">Register</a>
+        </Link>
       </div>
     </header>
   )

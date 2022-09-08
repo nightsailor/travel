@@ -1,4 +1,4 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document';
+import Document, { Html, Head, Main, NextScript } from 'next/document'
 
 export default class MyDocument extends Document {
   render() {
@@ -7,10 +7,7 @@ export default class MyDocument extends Document {
         <Head>
           <meta name="title" content="Voyager" />
           <meta name="author" content="Mohammed Talha" />
-          <meta
-            name="keywords"
-            content="Travel, Voyager"
-          />
+          <meta name="keywords" content="Travel, Voyager" />
           <meta name="description" content="Travel app" />
           <link rel="icon" href="/favicon.ico" />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -34,6 +31,6 @@ export default class MyDocument extends Document {
           <NextScript />
         </body>
       </Html>
-    );
+    )
   }
 }

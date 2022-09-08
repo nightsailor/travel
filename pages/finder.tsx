@@ -1,9 +1,5 @@
 const Finder = () => {
-  return (
-    <div>
-
-    </div>
-  )
+  return <div></div>
 }
 
 export default Finder

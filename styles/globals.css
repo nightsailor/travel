@@ -48,7 +48,7 @@
 
 @layer components {
   .hero {
-    background-image: url('https://www.outsideonline.com/wp-content/uploads/2020/04/13/pketron-photo-28-horizontal_h-scaled.jpg');
+    background-image: url('../public/hero.jpg');
     background-size: cover;
     background-repeat: no-repeat;
   }

@@ -60,11 +60,11 @@ const Home: NextPage = () => {
             <div className="w-1/3 h-12 flex flex-row ">
               <input
                 type="text"
-                className="w-3/4 rounded-l-md h-full px-12 text-xl outline-none border-none  "
+                className="w-44 sm:w-3/4 rounded-l-md h-full px-4 sm:px-12 text-xl outline-none border-none  "
                 placeholder="Places or experiences"
               />
               <Link href="/finder">
-                <button className="bg-green-700 rounded-r-md text-xl text-white w-1/4 h-full ">
+                <button className="bg-green-700 rounded-r-md text-xl text-white w-24 sm:w-1/4 h-full ">
                   Search
                 </button>
               </Link>
@@ -93,7 +93,7 @@ const Home: NextPage = () => {
           className="2xl:max-w-[1441px] 2xl:mx-auto pl-4 md:pl-24 mt-12"
         >
           <p className="heading ">Accomodations</p>
-          <div className="mt-14 md:space-x-4 flex flex-wrap flex-col md:flex-row items-start justify-begin ">
+          <div className="mt-14 flex flex-wrap flex-col md:flex-row items-start justify-begin ">
             {cards.slice(5).map((card, ind) => (
               <Accomodations {...card} key={ind} />
             ))}
@@ -101,7 +101,7 @@ const Home: NextPage = () => {
         </section>
         <section
           id="newsletter"
-          className="2xl:max-w-[1441px] 2xl:mx-auto bg-[#f4f9ff] bg-[#e5e1ef] bg-white px-24 lg:pl-[350px] py-24 "
+          className="msm:text-center 2xl:max-w-[1441px] 2xl:mx-auto bg-[#f4f9ff] bg-[#e5e1ef] bg-white px-4 md:px-24 lg:pl-[350px] py-24 "
         >
           <p className="heading ">New to travelling?</p>
           <p className="text-lg text-gray-900 text-black mt-5 mb-14">
@@ -112,13 +112,13 @@ const Home: NextPage = () => {
             <br />
             adventures each week!
           </p>
-          <div className="w-full h-12 flex justify-begin items-center space-x-5 ">
+          <div className="w-full h-12 flex justify-center sm:justify-start items-center space-x-3 sm:space-x-5 ">
             <input
               type="text"
-              className="w-96 rounded-sm h-full px-8 text-xl outline-none border-none bg-sky-50 placeholder-gray-900  "
+              className="w-48 sm:w-96 rounded-sm h-full px-4 sm:px-8 text-xl outline-none border-none bg-sky-50 placeholder-gray-900  "
               placeholder="Email Address"
             />
-            <button className="bg-green-700 rounded-sm text-xl text-white w-28 h-full ">
+            <button className="bg-green-700 rounded-sm text-xl text-white w-24 sm:w-28 h-full ">
               Sign up
             </button>
           </div>
@@ -160,9 +160,9 @@ const Cards = (data: CardsProps) => {
 
 const Accomodations = (data: any) => {
   return (
-    <div className="w-[350px] min-w-[350px]">
+    <div className="sm:w-[350px] sm:min-w-[350px] lg:mr-4">
       <div className="w-full h-[250px] ">
-        <img src={data.img} alt="" className="w-full h-full " />
+        <img src={data.img} alt="" className="w-[300px] sm:w-full h-full " />
       </div>
       <div className="w-full h-fit pt-5 pr-14">
         <p className="subheading">{data.title}</p>
